@@ -43,9 +43,9 @@ const SubNavbar = (): JSX.Element => {
       </Heading>
       <Box>{loadBoardUsers()}</Box>
       <Box>
-        <InviteModal />
+        {/* <InviteModal /> */}
         <BoardSettings />
-        <UnsplashDrawer />
+        {/* <UnsplashDrawer /> */}
       </Box>
     </Box>
   );

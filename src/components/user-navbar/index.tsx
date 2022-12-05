@@ -14,7 +14,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useAppSelector } from '@/src/hooks';
 import { AiOutlineHome } from 'react-icons/ai';
-import { SiTrello } from 'react-icons/si';
+import { SiTrello, SiAffinity } from 'react-icons/si';
 
 const UserNavBar: FC = () => {
   const user = useAppSelector((state) => state.user);
@@ -89,10 +89,10 @@ const UserNavBar: FC = () => {
       </Link>
       <Spacer />
       <Box size="md" m="10px" color="white">
-        <SiTrello />
+        <SiAffinity />
       </Box>
       <Text fontWeight="bold" fontSize="20px" mt="2px" color="white">
-        Trello clone
+        INE Project Management
       </Text>
       <Spacer />
       {renderButtons()}
