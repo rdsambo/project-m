@@ -30,11 +30,12 @@ const withSidebar = (App, props) => {
     render() {
       const { page } = props;
 
+      console.log(page);
       const sidebarMenu = [
-        { path: '/home', buttonName: 'Home', page: 'home', icon: AiOutlineHome },
         { path: '/boards', buttonName: 'Boards', page: 'boards', icon: AiOutlineCreditCard },
-        { path: '/templates', buttonName: 'Templates', page: 'templates', icon: AiOutlineBuild },
-        { path: '/settings', buttonName: 'Settings', page: 'settings', icon: AiOutlineSetting }
+        { path: '/home', buttonName: 'Home', page: 'home', icon: AiOutlineHome }
+        // { path: '/templates', buttonName: 'Templates', page: 'templates', icon: AiOutlineBuild },
+        // { path: '/settings', buttonName: 'Settings', page: 'settings', icon: AiOutlineSetting }
       ];
 
       return (
