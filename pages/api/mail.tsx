@@ -4,14 +4,66 @@ import checkEnvironment from '@/util/check-environment';
 import sgMail from '@sendgrid/mail';
 import shortId from 'shortid';
 import uniqid from 'uniqid';
+import nodemailer from 'nodemailer';
 
-const sendMail = (email, res, emailData, user) => {
+const sendNodeMail = async (email, res, emailData, user) => {
   const url = checkEnvironment();
   const page = 'signup';
+  const host = process.env.MAIL_HOST;
+  const from = process.env.EMAIL;
+  const pass = process.env.MAIL_PASSWORD;
+  // const transporter = nodemailer.createTransport({
+  //   host: host,
+  //   port: 465,
+  //   secure: true, // true for 465, false for other ports
+  //   auth: {
+  //     user: from, // generated ethereal user
+  //     pass: pass // generated ethereal password
+  //   }
+  // });
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    secure: true,
+    pool: true,
+    auth: {
+      user: from,
+      pass: pass
+    }
+  });
+
+  // send mail with defined transport object
+  const info = await transporter.sendMail({
+    from: from, // sender address
+    to: email, // list of receivers
+    subject: 'You are invited to join to a trello clone board',
+    html: `<div>
+      <div style="height:100px; background-color:#26292c; color: white">
+        <p>Trello Clone</p>
+      <div>
+      <div style="height:200px; background-color:#0079bf;">
+        <a href='${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}'>Join</a>
+      </div>
+      <div style="height:100px; background-color:#26292c;">
+
+      </div>
+    </div>`
+  });
+
+  console.log(info);
+};
+
+const sendMail = (email, res, emailData, user) => {
+  sendNodeMail(email, res, emailData, user);
+  const url = checkEnvironment();
+  const page = 'signup';
+  const link = `${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}`;
+  console.log(link);
 
   const msg = {
     to: email,
-    from: 'dell41ankit@gmail.com',
+    from: 'agostinho.machava@infopel.co.mz',
     subject: 'You are invited to join to a trello clone board',
     html: `<div>
       <div style="height:100px; background-color:#26292c; color: white">
@@ -32,6 +84,7 @@ const sendMail = (email, res, emailData, user) => {
       res.send({ message: 'Email sent sucessfully', status: 200 });
     })
     .catch((error) => {
+      console.log('Failed');
       console.error(error);
       res.send({ message: 'Failed to send' });
     });
