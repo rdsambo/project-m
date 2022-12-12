@@ -12,7 +12,7 @@ LoginPageWithStore.getInitialProps = async (ctx) => {
 
   if (userDetails && userDetails.isValid) {
     ctx.res.writeHead(307, {
-      Location: '/boards'
+      Location: '/home'
     });
 
     ctx.res.end();

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Flex,
   Box,
@@ -18,7 +18,6 @@ import { useState } from 'react';
 import checkEnvironment from '@/util/check-environment';
 import { useRouter } from 'next/router';
 import inviteUser from '@/util/invite-user';
-import auth from 'util/auth-user';
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -31,29 +30,15 @@ const Login = () => {
 
   const host = checkEnvironment();
   const router = useRouter();
+
   const loginUser = async (e) => {
-    let data = {};
-    if (e != null) {
-      e.preventDefault();
-      data = {
-        email: values.email,
-        password: values.password
-      };
-    } else {
-      const email = auth().email;
-      const pass = auth().id;
-
-      if (email == null || email == '') {
-        return;
-      }
-
-      data = {
-        email: email,
-        password: pass
-      };
-    }
-
+    e.preventDefault();
     setIsFetching(true);
+
+    const data = {
+      email: values.email,
+      password: values.password
+    };
 
     const url = `${host}/api/login`;
 
@@ -80,23 +65,16 @@ const Login = () => {
       const hasInvited = await inviteUser({ email: inviteEmail, boardId });
 
       if (hasInvited) {
-        window.location.href = `${window.location.origin}/boards`;
+        window.location.href = `${window.location.origin}/home`;
       }
     } else if (result.message === 'success') {
-      window.location.href = `${window.location.origin}/boards`;
+      window.location.href = `${window.location.origin}/home`;
     }
 
     if (response.status === 404) {
       setErrorState(true);
     }
   };
-
-  // Auto login
-  useEffect(() => {
-    setTimeout(() => {
-      loginUser(null);
-    }, 500);
-  }, []);
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

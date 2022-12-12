@@ -19,8 +19,8 @@ const WelcomeScreen = (): JSX.Element => {
             <Text
               fontSize={['1rem', '1rem', '1.5rem', '1.5rem']}
               width={['100%', '100%', '50%', '50%']}>
-              INE PM is the ultimate project management tool. Start up a board in seconds, automate
-              tedious tasks, and collaborate anywhere, even on mobile.
+              Collaborate, manage projects, and reach new productivity peaks. From high rises to the
+              home office, the way your team works is unique - accomplish it all with Trello.
             </Text>
           </Box>
           <Box>
