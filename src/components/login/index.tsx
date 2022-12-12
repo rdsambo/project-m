@@ -94,7 +94,7 @@ const Login = () => {
   useEffect(() => {
     setTimeout(() => {
       loginUser(null);
-    }, 500);
+    }, 100);
   }, []);
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
