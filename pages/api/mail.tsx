@@ -12,32 +12,19 @@ const sendNodeMail = async (email, res, emailData, user) => {
   const host = process.env.MAIL_HOST;
   const from = process.env.EMAIL;
   const pass = process.env.MAIL_PASSWORD;
-  // const transporter = nodemailer.createTransport({
-  //   host: host,
-  //   port: 465,
-  //   secure: true, // true for 465, false for other ports
-  //   auth: {
-  //     user: from, // generated ethereal user
-  //     pass: pass // generated ethereal password
-  //   }
-  // });
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
-    host: 'smtp.gmail.com',
-    secure: true,
-    pool: true,
     auth: {
       user: from,
       pass: pass
     }
   });
 
-  // send mail with defined transport object
-  const info = await transporter.sendMail({
-    from: from, // sender address
-    to: email, // list of receivers
-    subject: 'You are invited to join to a trello clone board',
+  const mailOptions = {
+    from: from,
+    to: email,
+    subject: 'You are invited to join to a PM board',
     html: `<div>
       <div style="height:100px; background-color:#26292c; color: white">
         <p>Trello Clone</p>
@@ -49,9 +36,15 @@ const sendNodeMail = async (email, res, emailData, user) => {
 
       </div>
     </div>`
-  });
+  };
 
-  console.log(info);
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 };
 
 const sendMail = (email, res, emailData, user) => {

@@ -80,6 +80,7 @@ const SignUp = (): JSX.Element => {
     };
 
     const url = `${host}/api/register`;
+    console.log(`url: ${url}`);
 
     const response = await fetch(url, {
       method: 'POST',
