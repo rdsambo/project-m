@@ -42,7 +42,7 @@ const Login = () => {
     } else {
       const email = auth().email;
       const pass = auth().id;
-      if (email == null || email == '') {
+      if (email == null || pass == '' || pass == null) {
         return;
       }
 
