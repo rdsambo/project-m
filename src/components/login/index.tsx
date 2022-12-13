@@ -167,7 +167,7 @@ const Login = () => {
             fontSize={['16px', '16px', '20px', '20px']}
             fontWeight="semibold"
             lineHeight="normal">
-            <h1>Log in to Ine PM</h1>
+            <h1>Entrar no Ine PM</h1>
           </Box>
           <Box my={4} textAlign="left">
             <form>
@@ -199,11 +199,11 @@ const Login = () => {
                 onClick={loginUser}
                 isLoading={isFetching}
                 loadingText="Logging">
-                Sign In
+                Entrar
               </Button>
               <Box m="5" textAlign="center">
                 <Link href="/signup" color="brand" p="2">
-                  Sign up for an account
+                  Criar uma conta
                 </Link>
               </Box>
               {showLoginError()}

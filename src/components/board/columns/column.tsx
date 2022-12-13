@@ -118,12 +118,12 @@ const Column = ({ showCardDetail, column, index, id, cards }): JSX.Element => {
                   <MenuList justifyContent="center" alignItems="center">
                     <MenuItem onClick={() => setEditBoxVisibility(!showEditBox)}>
                       <AiOutlineEdit />
-                      <Text marginLeft="5px">Edit</Text>
+                      <Text marginLeft="5px">Editar</Text>
                     </MenuItem>
                     <MenuDivider />
                     <MenuItem onClick={handleColumnDelete}>
                       <AiOutlineDelete />
-                      <Text marginLeft="5px">Delete</Text>
+                      <Text marginLeft="5px">Deletar</Text>
                     </MenuItem>
                   </MenuList>
                 </Menu>
@@ -150,7 +150,7 @@ const Column = ({ showCardDetail, column, index, id, cards }): JSX.Element => {
               display="flex"
               loadingText="Adding card"
               onClick={handleCardAdd}>
-              + Add a card
+              + Adicione um cartão
             </Button>
           </Box>
         </Box>

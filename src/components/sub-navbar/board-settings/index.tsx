@@ -62,20 +62,20 @@ const BoardSettings = (): JSX.Element => {
           <ModalBody>
             <Tabs isFitted variant="enclosed">
               <TabList mb="2rem">
-                <Tab>Basic</Tab>
-                <Tab>Advance</Tab>
+                <Tab>Básico</Tab>
+                <Tab>Avançado</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
                   <FormControl id="email">
-                    <FormLabel>Board name</FormLabel>
+                    <FormLabel>Nome do quadro</FormLabel>
                     <Input
                       value={board.name}
                       onChange={(e) =>
                         dispatch(updateBoardDetail({ type: 'name', value: e.target.value }))
                       }
                     />
-                    <FormHelperText>You can change this any time</FormHelperText>
+                    <FormHelperText>Você pode mudar isso a qualquer momento</FormHelperText>
                   </FormControl>
                   <Box align="right">
                     <Button
@@ -88,7 +88,7 @@ const BoardSettings = (): JSX.Element => {
                   </Box>
                 </TabPanel>
                 <TabPanel>
-                  <p>To delete your board, Click on Delete button.</p>
+                  <p>Para excluir seu quadro, clique no botão Deletar.</p>
                   <Box align="right">
                     <Button
                       bg="red.500"
@@ -99,7 +99,7 @@ const BoardSettings = (): JSX.Element => {
                       }}
                       isLoading={boardDelete}
                       loadingText="Deleting">
-                      <AiOutlineDelete /> &nbsp;Delete
+                      <AiOutlineDelete /> &nbsp;Deletar
                     </Button>
                   </Box>
                 </TabPanel>

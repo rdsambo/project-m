@@ -84,7 +84,7 @@ const UserNavBar: FC = () => {
       </Link>
       <Link href="/boards">
         <Button size="xs" ml="5px" mr="10px" my="5px">
-          Boards
+          Quadros
         </Button>
       </Link>
       <Spacer />
@@ -92,7 +92,7 @@ const UserNavBar: FC = () => {
         <SiAffinity />
       </Box>
       <Text fontWeight="bold" fontSize="20px" mt="2px" color="white">
-        INE Project Management
+        INE PM
       </Text>
       <Spacer />
       {renderButtons()}
