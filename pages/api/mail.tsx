@@ -5,6 +5,7 @@ import sgMail from '@sendgrid/mail';
 import shortId from 'shortid';
 import uniqid from 'uniqid';
 import nodemailer from 'nodemailer';
+import buildInviteEmail from '@/util/templent';
 
 const sendNodeMail = async (email, res, emailData, user) => {
   const url = checkEnvironment();
@@ -21,21 +22,12 @@ const sendNodeMail = async (email, res, emailData, user) => {
     }
   });
 
+  const link = `${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}`;
   const mailOptions = {
     from: from,
     to: email,
-    subject: 'You are invited to join to a PM board',
-    html: `<div>
-      <div style="height:100px; background-color:#26292c; color: white">
-        <p>Trello Clone</p>
-      <div>
-      <div style="height:200px; background-color:#0079bf;">
-        <a href='${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}'>Join</a>
-      </div>
-      <div style="height:100px; background-color:#26292c;">
-
-      </div>
-    </div>`
+    subject: 'Você está convidado a participar de um quadro de INE PM',
+    html: buildInviteEmail(link)
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
