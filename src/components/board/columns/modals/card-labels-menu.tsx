@@ -59,7 +59,7 @@ const CardLabel: FC<IProps> = ({ id, boardId }) => {
   return (
     <Box marginTop="2rem" flexDirection="column" width="20%">
       <Text as="samp" whiteSpace="nowrap">
-        ADD TO CARD
+        ADICIONAR AO CARTÃO
       </Text>
       <List spacing={3} p="5px">
         <ListItem>

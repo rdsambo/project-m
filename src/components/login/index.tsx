@@ -112,7 +112,7 @@ const Login = () => {
       <Alert status="error">
         <AlertIcon />
         <AlertTitle mr={2}>Error</AlertTitle>
-        <AlertDescription>Invalid username or password</AlertDescription>
+        <AlertDescription>Nome de usuário ou senha inválidos</AlertDescription>
         <CloseButton
           position="absolute"
           right="8px"

@@ -129,7 +129,7 @@ const SignUp = (): JSX.Element => {
       <Alert status="error">
         <AlertIcon />
         <AlertTitle mr={2}>Error</AlertTitle>
-        <AlertDescription>Email already in use</AlertDescription>
+        <AlertDescription>Email já em uso</AlertDescription>
         <CloseButton
           position="absolute"
           right="8px"
@@ -213,7 +213,7 @@ const SignUp = (): JSX.Element => {
                 type="email"
                 name="email"
                 value={values.email}
-                placeholder="Enter Email"
+                placeholder="Digite o e-mail"
                 onChange={handleChange}
                 autoComplete="off"
               />
@@ -224,7 +224,7 @@ const SignUp = (): JSX.Element => {
                 type="text"
                 name="fullName"
                 value={values.fullName}
-                placeholder="Full name"
+                placeholder="Nome completo"
                 onChange={handleChange}
                 autoComplete="off"
               />
@@ -234,7 +234,7 @@ const SignUp = (): JSX.Element => {
                 type="password"
                 name="password"
                 value={values.password}
-                placeholder="Create password"
+                placeholder="Password"
                 onChange={handleChange}
               />
               {passwordErr && <p color="red">Invalid password.</p>}
@@ -244,7 +244,7 @@ const SignUp = (): JSX.Element => {
                 type="password"
                 name="confirmPassword"
                 value={values.confirmPassword}
-                placeholder="Confirm password"
+                placeholder="Confirmar password"
                 onChange={handleChange}
               />
             </FormControl>
@@ -257,7 +257,7 @@ const SignUp = (): JSX.Element => {
               color="white"
               onClick={registerUser}
               isLoading={isCreating}
-              loadingText="Registering">
+              loadingText="Registrando">
               Sign up
             </Button>
             <Box m="5" textAlign="center">

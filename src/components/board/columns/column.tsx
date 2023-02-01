@@ -148,7 +148,7 @@ const Column = ({ showCardDetail, column, index, id, cards }): JSX.Element => {
               disabled={cardRequest}
               isLoading={cardRequest}
               display="flex"
-              loadingText="Adding card"
+              loadingText="Adicionando cartão"
               onClick={handleCardAdd}>
               + Adicione um cartão
             </Button>

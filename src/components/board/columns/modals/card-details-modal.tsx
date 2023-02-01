@@ -81,7 +81,7 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
     return (
       <Menu>
         <MenuButton as={Button} size="xs" rightIcon={<AiOutlineDown />}>
-          Assign To
+          Atribuir a
         </MenuButton>
         <MenuList>
           {users.map((user, index) => (
@@ -89,7 +89,7 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
               {user?.fullName}
             </MenuItem>
           ))}
-          <MenuItem onClick={() => handleClick('')}>Unassign</MenuItem>
+          <MenuItem onClick={() => handleClick('')}>Remover atribuição</MenuItem>
         </MenuList>
       </Menu>
     );
@@ -116,14 +116,14 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
                 value={title}
                 fontWeight="bold"
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Card title"
+                placeholder="Título do cartão"
               />
             </Box>
             <Box display="flex">
               <Box width="100%" marginTop="2rem">
                 <Box display="flex" fontWeight="bold">
                   <GrTextAlignFull />
-                  <Text marginLeft="1rem">Description</Text>
+                  <Text marginLeft="1rem">Descrição</Text>
                 </Box>
                 <Box marginLeft="1.5rem" minHeight="200px" width="90%">
                   <QuillEditor value={description} onChange={setDescription} />
@@ -142,7 +142,7 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
               onClick={handleCardDelete}
               disabled={cardDelete}
               isLoading={cardDelete}
-              loadingText="Deleting"
+              loadingText="Deletando"
               bg="red.500"
               color="white"
               _hover={{
@@ -156,7 +156,7 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
               disabled={cardRequest}
               isLoading={cardRequest}
               loadingText="Updating">
-              <AiOutlineClose /> Close
+              <AiOutlineClose /> Guardar
             </Button>
           </ModalFooter>
         </ModalContent>
