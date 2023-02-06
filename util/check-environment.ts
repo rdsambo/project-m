@@ -4,6 +4,8 @@ export default function checkEnvironment(): string {
       ? 'http://vmi840200.contaboserver.net:3000'
       : 'http://vmi840200.contaboserver.net:3000';
 
+  console.log(envUrl);
+
   //'https://trello-sepia-gamma.vercel.app
 
   return envUrl;
