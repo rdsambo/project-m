@@ -19,7 +19,7 @@ const isUserExists = async (db, email) => {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
-  // res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
