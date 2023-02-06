@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'Set-Cookie',
               serialize('token', token, {
                 httpOnly: true,
-                secure: true,
+                secure: false,
                 maxAge: 60 * 60 * 24 * 1000,
                 sameSite: 'lax',
                 path: '/'
