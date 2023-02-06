@@ -34,9 +34,7 @@ export const saveBoard = createAsyncThunk('board/save', async (obj, { getState }
 
   const response = await fetch(url, {
     method: 'PATCH',
-    mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json'
     },

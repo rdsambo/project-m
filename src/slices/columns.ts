@@ -35,9 +35,7 @@ export const deleteColumn = createAsyncThunk(
 
     const response = await fetch(url, {
       method: 'DELETE',
-      mode: 'cors',
       cache: 'no-cache',
-      credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },

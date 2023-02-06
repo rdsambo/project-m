@@ -40,9 +40,7 @@ export const createBoard = createAsyncThunk('board/create', async (_obj, { getSt
 
   const response = await fetch(url, {
     method: 'POST',
-    mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json'
     },
