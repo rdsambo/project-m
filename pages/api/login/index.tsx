@@ -19,6 +19,7 @@ const isUserExists = async (db, email) => {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
@@ -40,9 +41,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'Set-Cookie',
               serialize('token', token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV !== 'development',
+                secure: false,
                 maxAge: 60 * 60 * 24 * 1000,
-                sameSite: 'strict',
+                sameSite: 'lax',
                 path: '/'
               })
             );
