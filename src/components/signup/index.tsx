@@ -174,23 +174,23 @@ const SignUp = (): JSX.Element => {
         alignItems="center"
         flexDirection={['column', 'column', 'row', 'row']}
         justifyContent="center">
-        <Image
-          position="absolute"
-          bottom="5%"
-          left="5%"
-          src="/signup/sign-up-left.svg"
-          alt=" team work illustration"
-          width={[0, '25%']}
-        />
-        <Image
-          position="absolute"
-          bottom="5%"
-          right="5%"
-          src="/signup/sign-up-right.svg"
-          alt="work together illustration"
-          width={[0, '25%']}
-          borderRadius="3px"
-        />
+        {/*<Image*/}
+        {/*  position="absolute"*/}
+        {/*  bottom="5%"*/}
+        {/*  left="5%"*/}
+        {/*  src="/signup/sign-up-left.svg"*/}
+        {/*  alt=" team work illustration"*/}
+        {/*  width={[0, '25%']}*/}
+        {/*/>*/}
+        {/*<Image*/}
+        {/*  position="absolute"*/}
+        {/*  bottom="5%"*/}
+        {/*  right="5%"*/}
+        {/*  src="/signup/sign-up-right.svg"*/}
+        {/*  alt="work together illustration"*/}
+        {/*  width={[0, '25%']}*/}
+        {/*  borderRadius="3px"*/}
+        {/*/>*/}
         <Box
           p="25px 40px"
           width={['80%', '60%', '45%', '25%']}
@@ -205,7 +205,7 @@ const SignUp = (): JSX.Element => {
             fontSize={['10px', '10px', '15px', '15px']}
             fontWeight="semibold"
             lineHeight="normal">
-            <h1>Sign up for your account</h1>
+            <h1>Inscreva-se</h1>
           </Box>
           <Box my={4} textAlign="left">
             <FormControl isRequired>
@@ -258,11 +258,11 @@ const SignUp = (): JSX.Element => {
               onClick={registerUser}
               isLoading={isCreating}
               loadingText="Registrando">
-              Sign up
+              Registrar
             </Button>
             <Box m="5" textAlign="center">
               <Link href="/login" color="brand" p="2">
-                Already have an account? Log in.
+                já tem uma conta? Conecte-se.
               </Link>
             </Box>
             {showSignUpError()}

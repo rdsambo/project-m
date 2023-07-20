@@ -14,18 +14,17 @@ const WelcomeScreen = (): JSX.Element => {
           p="4rem">
           <Box>
             <Text fontSize={['40px', '40px', '50px', '50px']} fontWeight="bold" lineHeight="50px">
-              INE PM helps teams move work forward.
+              Gerenciamento de projeto
             </Text>
             <Text
               fontSize={['1rem', '1rem', '1.5rem', '1.5rem']}
               width={['100%', '100%', '50%', '50%']}>
-              Collaborate, manage projects, and reach new productivity peaks. From high rises to the
-              home office, the way your team works is unique - accomplish it all with Trello.
+              Colabore, gerencie projetos e alcance novos picos de produtividade.
             </Text>
           </Box>
           <Box>
             <Image
-              height={['200px', '300px', '400px', '500px']}
+              height={['200px', '300px', '250px', '350px']}
               src="/homepage/home-illustration.svg"
               alt="brand logo"></Image>
           </Box>

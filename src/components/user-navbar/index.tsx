@@ -50,6 +50,7 @@ const UserNavBar: FC = () => {
             <MenuButton size="xs" mr="5px">
               <Avatar
                 size="sm"
+                bg="rgb(230 59 55)"
                 name={user?.fullName}
                 color="white"
                 src="https://bit.ly/tioluwani-kolawole"
@@ -76,7 +77,7 @@ const UserNavBar: FC = () => {
   };
 
   return (
-    <Box boxShadow="sm" bg="rgba(0,0,0,0.2)" display="flex">
+    <Box boxShadow="sm" bg="rgba(112, 181, 0, 0.44)" display="flex">
       <Link href="/home">
         <Button size="xs" ml="5px" my="5px">
           <AiOutlineHome />
@@ -87,13 +88,10 @@ const UserNavBar: FC = () => {
           Quadros
         </Button>
       </Link>
-      <Spacer />
-      <Box size="md" m="10px" color="white">
-        <SiAffinity />
-      </Box>
-      <Text fontWeight="bold" fontSize="20px" mt="2px" color="white">
-        INE PM
-      </Text>
+      {/*<Spacer />*/}
+      {/*<Text fontWeight="bold" fontSize="20px" mt="2px" color="white">*/}
+      {/*  Gerenciamento de projetos*/}
+      {/*</Text>*/}
       <Spacer />
       {renderButtons()}
     </Box>

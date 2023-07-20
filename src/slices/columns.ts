@@ -66,7 +66,7 @@ export const addColumnToBoard = createAsyncThunk(
     const data = {
       id: columnId,
       boardId: board.board._id,
-      columnName: 'Add title',
+      columnName: 'Adicionar título',
       dateCreated: new Date().toLocaleString(),
       userId: user.id,
       sequence

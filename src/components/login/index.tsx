@@ -124,9 +124,8 @@ const Login = () => {
   return (
     <>
       <Box display="flex" justifyContent="center" alignItems="center" my="40px">
-        <Image height="20px" mt="2" src="/trello-icon.png" alt="brand logo"></Image>
-        <Text fontWeight="bold" fontSize="28px" m="4px">
-          Ine PM
+        <Text fontWeight="bold" fontSize="20px" m="4px">
+          Gerenciamento de projetos
         </Text>
       </Box>
 
@@ -134,23 +133,23 @@ const Login = () => {
         alignItems="center"
         flexDirection={['column', 'column', 'row', 'row']}
         justifyContent="center">
-        <Image
-          position="absolute"
-          bottom="5%"
-          left="5%"
-          src="/login/left.svg"
-          alt=" new user illustration"
-          width={[0, '30%']}
-        />
-        <Image
-          position="absolute"
-          bottom="5%"
-          right="5%"
-          src="/login/right.svg"
-          alt="task scheduler illustration"
-          width={[0, '30%']}
-          borderRadius="3px"
-        />
+        {/*<Image*/}
+        {/*  position="absolute"*/}
+        {/*  bottom="5%"*/}
+        {/*  left="5%"*/}
+        {/*  src="/login/left.svg"*/}
+        {/*  alt=" new user illustration"*/}
+        {/*  width={[0, '30%']}*/}
+        {/*/>*/}
+        {/*<Image*/}
+        {/*  position="absolute"*/}
+        {/*  bottom="5%"*/}
+        {/*  right="5%"*/}
+        {/*  src="/login/right.svg"*/}
+        {/*  alt="task scheduler illustration"*/}
+        {/*  width={[0, '30%']}*/}
+        {/*  borderRadius="3px"*/}
+        {/*/>*/}
         <Box
           p="25px 40px"
           width={['80%', '60%', '45%', '25%']}
@@ -165,7 +164,7 @@ const Login = () => {
             fontSize={['16px', '16px', '20px', '20px']}
             fontWeight="semibold"
             lineHeight="normal">
-            <h1>Entrar no Ine PM</h1>
+            <h1>Entrar</h1>
           </Box>
           <Box my={4} textAlign="left">
             <form>
