@@ -89,21 +89,3 @@ Reach out to the maintainer at one of the following places:
 
 All contributions are welcome!
 
-### Contributors
-
-<a href="https://github.com/knowankit/trello-clone/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=knowankit/trello-clone" />
-</a>
-
-Made with [contributors-img](https://contrib.rocks).
-## Other interesting repositories
-
-- [My Portfolio](https://github.com/knowankit/knowankit.com)
-- [React bubble effect button](https://github.com/knowankit/react-bubbly-effect-button)
-- [Particle text effect](https://github.com/knowankit/particle-text-effect)
-
-## License
-
-This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
-
-See [LICENSE](LICENSE) for more information.
