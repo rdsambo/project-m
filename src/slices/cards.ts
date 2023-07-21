@@ -113,6 +113,9 @@ export const updateCard = createAsyncThunk(
 
     const url = `${host}/api/boards/${board.board._id}/cards/${obj._id}`;
 
+    console.log('obj');
+    console.log(obj);
+
     const response = await fetch(url, {
       method: 'PATCH',
       mode: 'cors',

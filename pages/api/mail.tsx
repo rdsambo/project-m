@@ -5,9 +5,9 @@ import sgMail from '@sendgrid/mail';
 import shortId from 'shortid';
 import uniqid from 'uniqid';
 import nodemailer from 'nodemailer';
-import buildInviteEmail from '@/util/templent';
+import buildEmail from '@/util/templent';
 
-const sendNodeMail = async (email, res, emailData, user) => {
+const sendMail = async (email, res, emailData, user) => {
   const url = checkEnvironment();
   const page = 'signup';
   const host = process.env.MAIL_HOST;
@@ -23,11 +23,14 @@ const sendNodeMail = async (email, res, emailData, user) => {
   });
 
   const link = `${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}`;
+  const title = 'Você está convidado a participar de um quadro do Gerenciador de Tarefas';
+  const body = `Saudações, você foi convidado para participar de um quadro do Gerenciador de Tarefas. Clique no link abaixo para aceitar o convite.`;
+
   const mailOptions = {
     from: from,
     to: email,
-    subject: 'Você está convidado a participar de um quadro de INE PM',
-    html: buildInviteEmail(link)
+    subject: title,
+    html: buildEmail(link, title, body, 'aceitar o convite')
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
@@ -37,42 +40,6 @@ const sendNodeMail = async (email, res, emailData, user) => {
       console.log('Email sent: ' + info.response);
     }
   });
-};
-
-const sendMail = (email, res, emailData, user) => {
-  sendNodeMail(email, res, emailData, user);
-  const url = checkEnvironment();
-  const page = 'signup';
-  const link = `${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}`;
-  console.log(link);
-
-  const msg = {
-    to: email,
-    from: 'agostinho.machava@infopel.co.mz',
-    subject: 'You are invited to join to a trello clone board',
-    html: `<div>
-      <div style="height:100px; background-color:#26292c; color: white">
-        <p>Trello Clone</p>
-      <div>
-      <div style="height:200px; background-color:#0079bf;">
-        <a href='${url}/${page}?token=${emailData.token}&email=${email}&boardId=${emailData.boardId}'>Join</a>
-      </div>
-      <div style="height:100px; background-color:#26292c;">
-
-      </div>
-    </div>`
-  };
-
-  sgMail
-    .send(msg)
-    .then(() => {
-      res.send({ message: 'Email sent sucessfully', status: 200 });
-    })
-    .catch((error) => {
-      console.log('Failed');
-      console.error(error);
-      res.send({ message: 'Failed to send' });
-    });
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {

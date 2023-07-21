@@ -1,10 +1,10 @@
-const buildInviteEmail = (link) => {
+const buildEmail = (link, title, body, btnText) => {
   return `<!doctype html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Simple Transactional Email</title>
+    <title>${title}</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -334,7 +334,7 @@ const buildInviteEmail = (link) => {
     </style>
   </head>
   <body>
-    <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+    <span class="preheader">${body}</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -350,8 +350,8 @@ const buildInviteEmail = (link) => {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <p>Olá</p>
-                        <p>Junte-se a mim no INE PM e vamos trabalhar juntos neste quadro!</p>
+                        <p>${title}</p>
+                        <p>${body}</p>
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -359,7 +359,7 @@ const buildInviteEmail = (link) => {
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="${link}" target="_blank">Aceitar o convite</a> </td>
+                                      <td> <a href="${link}" target="_blank">${btnText}</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -405,4 +405,4 @@ const buildInviteEmail = (link) => {
 </html>`;
 };
 
-export default buildInviteEmail;
+export default buildEmail;

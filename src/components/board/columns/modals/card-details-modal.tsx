@@ -24,6 +24,7 @@ import { GrTextAlignFull } from 'react-icons/gr';
 import CardLabel from '@/src/components/board/columns/modals/card-labels-menu';
 import QuillEditor from '@/src/components/quill-editor';
 import { AiOutlineDown } from 'react-icons/ai';
+import { userAssignToCardNotification } from '@/src/slices/notification';
 
 type Props = {
   onClose: () => void;
@@ -75,6 +76,7 @@ const CardDetailsModal: FC<Props> = ({ onClose, isOpen, card }) => {
     };
 
     await dispatch(updateCard(data));
+    await dispatch(userAssignToCardNotification(data));
   };
 
   const assignToMenu = () => {
