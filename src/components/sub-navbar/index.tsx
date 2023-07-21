@@ -44,7 +44,7 @@ const SubNavbar = (): JSX.Element => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      bg="rgba(112, 181, 0, 0.30)">
+      bg="rgba(0, 153, 72, 0.30)">
       <Heading ml="0.5rem" color="white" as="h4" size="sm" whiteSpace="nowrap" d="block">
         {board?.name}
       </Heading>

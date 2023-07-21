@@ -77,7 +77,7 @@ const UserNavBar: FC = () => {
   };
 
   return (
-    <Box boxShadow="sm" bg="rgba(112, 181, 0, 0.44)" display="flex">
+    <Box boxShadow="sm" bg="rgba(0, 153, 72,1)" display="flex">
       <Link href="/home">
         <Button size="xs" ml="5px" my="5px">
           <AiOutlineHome />
