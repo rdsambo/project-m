@@ -9,6 +9,10 @@ const getCookieUser = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const email = urlParams.get('email');
   const id = urlParams.get('id');
+
+  console.log('_email:'+email+'_');
+  console.log('_id'+id+'_');
+  
   if (email != null) {
     Cookies.set('email', email);
     Cookies.set('id', email);
